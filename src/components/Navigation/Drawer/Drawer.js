@@ -1,7 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Drawer.scss';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-import { NavLink } from 'react-router-dom';
 
 function Drawer(props) {
   const links = [

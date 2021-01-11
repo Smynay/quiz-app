@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './QuizList.scss';
 import Loader from '../../components/UI/Loader/Loader';
-import { connect } from 'react-redux';
 import { fetchQuizes } from '../../store/actions/quiz';
 
 function QuizList(props) {
-  // const [quizes, setQuizes] = useState([]);
-  // const [loading, setLoading] = useState(true);
-
   const renderQuizes = () => {
     return props.quizes.map((quiz) => (
       <li key={quiz.id}>
@@ -19,6 +16,7 @@ function QuizList(props) {
 
   useEffect(() => {
     props.fetchQuizes();
+    //eslint-disable-next-line
   }, []);
 
   return (

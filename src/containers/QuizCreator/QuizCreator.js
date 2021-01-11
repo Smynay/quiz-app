@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import './QuizCreator.scss';
 import Button from '../../components/UI/Button/Button';
 import Input from '../../components/UI/Input/Input';
@@ -9,7 +10,6 @@ import {
   validateForm,
 } from '../../form/formFramework';
 import Auxiliary from '../../hoc/Auxiliary';
-import { connect } from 'react-redux';
 import {
   quizCreateQuestion,
   quizFinishCreate,

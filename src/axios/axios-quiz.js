@@ -1,5 +1,6 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: '', //paste your DB url here
+  baseURL: process.env.REACT_APP_DB_URL,
+  timeout: 1000,
 });

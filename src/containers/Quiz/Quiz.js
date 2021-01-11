@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import './Quiz.scss';
 import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz';
 import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz';
 import Loader from '../../components/UI/Loader/Loader';
-import { connect } from 'react-redux';
 import {
   fetchQuizById,
   quizAnswerClick,
@@ -12,9 +12,10 @@ import {
 
 function Quiz(props) {
   useEffect(() => {
-    props.fetchQuizById(props.match.params.id);
+    props.fetchQuizById(props.match.params.id).then(console.log(props.quiz));
 
     return props.quizRetry;
+    //eslint-disable-next-line
   }, [props.match.params.id, props.fetchQuizById]);
 
   return (
@@ -22,7 +23,7 @@ function Quiz(props) {
       <div className="QuizWrapper" style={{ width: 600 }}>
         <h1> Ответьте на все вопросы </h1>
 
-        {props.loading ? (
+        {props.loading && !!!props.quiz ? (
           <Loader />
         ) : props.isFinished ? (
           <FinishedQuiz

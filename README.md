@@ -2,9 +2,9 @@
 
 Use Firebase services for deploying.
 
-Go to and paste your URLs:
+Create .env.local and push:
 
-1. src/axios/axios-quiz.js
-2. src/store/actions/auth.js
+1. REACT_APP_DB_URL
+2. REACT_APP_API_KEY
 
 Now you ready for run or deploy the project.

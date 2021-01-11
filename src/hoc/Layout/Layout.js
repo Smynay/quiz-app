@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import './Layout.scss';
 import MenuToggle from '../../components/Navigation/MenuToggle/MenuToggle';
 import Drawer from '../../components/Navigation/Drawer/Drawer';
-import { connect } from 'react-redux';
 
 function Layout(props) {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
+import { connect } from 'react-redux';
 import './Auth.scss';
 import Button from '../../components/UI/Button/Button';
 import Input from '../../components/UI/Input/Input';
 import { validate, validateForm } from '../../form/formFramework';
-import { connect } from 'react-redux';
 import { auth } from '../../store/actions/auth';
 
 function Auth(props) {
@@ -32,20 +32,12 @@ function Auth(props) {
 
   const loginHandler = useCallback(() => {
     props.auth(formControls.email.value, formControls.password.value, true);
-
-    // try {
-    //   const response = await axios.post(
-    //     'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCD0YDsSP5ePy7RNijMeaeK0HZ6RUaTMlU',
-    //     authData
-    //   );
-    //   console.log(response.data);
-    // } catch (e) {
-    //   console.log(e);
-    // }
+    //eslint-disable-next-line
   }, [formControls.password.value, formControls.email.value]);
 
   const registerHandler = useCallback(() => {
     props.auth(formControls.email.value, formControls.password.value, false);
+    //eslint-disable-next-line
   }, [formControls.password.value, formControls.email.value]);
 
   const onChangeHandler = (event, controlName) => {

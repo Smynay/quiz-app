@@ -9,10 +9,14 @@ export function auth(email, password, isLogin) {
       returnSecureToken: true,
     };
 
-    let url = ''; // your signUp url
+    let url =
+      'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' +
+      process.env.REACT_APP_API_KEY; // your signUp url
 
     if (isLogin) {
-      url = ''; // your signIn url
+      url =
+        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' +
+        process.env.REACT_APP_API_KEY; // your signIn url
     }
 
     const response = await axios.post(url, authData);

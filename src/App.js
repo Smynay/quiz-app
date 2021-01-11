@@ -1,13 +1,12 @@
-import './App.css';
+import React, { useEffect } from 'react';
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Layout from './hoc/Layout/Layout';
 import Quiz from './containers/Quiz/Quiz';
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import QuizList from './containers/QuizList/QuizList';
 import QuizCreator from './containers/QuizCreator/QuizCreator';
 import Auth from './containers/Auth/Auth';
-import { connect } from 'react-redux';
 import Logout from './components/Logout/Logout';
-import { useEffect } from 'react';
 import { autoLogin } from './store/actions/auth';
 
 function App(props) {
