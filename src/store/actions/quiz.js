@@ -40,7 +40,6 @@ export function fetchQuizById(quizId) {
 
     try {
       const response = await axios.get(`/quizes/${quizId}.json`);
-
       const quiz = response.data;
 
       dispatch(fetchQuizSuccess(quiz));

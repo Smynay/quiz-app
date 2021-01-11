@@ -12,18 +12,18 @@ import {
 
 function Quiz(props) {
   useEffect(() => {
-    props.fetchQuizById(props.match.params.id).then(console.log(props.quiz));
+    props.fetchQuizById(props.match.params.id);
 
     return props.quizRetry;
     //eslint-disable-next-line
-  }, [props.match.params.id, props.fetchQuizById]);
+  }, []);
 
   return (
     <div className="Quiz">
       <div className="QuizWrapper" style={{ width: 600 }}>
         <h1> Ответьте на все вопросы </h1>
 
-        {props.loading && !!!props.quiz ? (
+        {props.loading || !props.quiz ? (
           <Loader />
         ) : props.isFinished ? (
           <FinishedQuiz
